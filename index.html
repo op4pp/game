@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard SE', 'Helvetica', 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #myDiv {
+            width: 850px;
+            height: 850px;
+            background-image: url('easter.jpeg');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        #myButton {
+            background-color: #FFB6C1;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        <p id="sentence"></p>
+        <button id="myButton" onclick="displayNextSentence()">Järgmine</button>
+    </div>
+    <script>
+        var sentences = ["See kaob tihti tormiga... vahest võib seal kandis kohata ka ühte golfiga seotud asja.", "Peaks tekkima deja vu, sest see on nähtud, kuid mitte ühel korral kohe leitud. Igatahes, liiga kaugel see pole!", "Mõnikord võib see katki minna, aga isegi razzy oskab siis midagi ette võtta... ja leiab asenduse."];
+        var index = 0;
+
+        function displayNextSentence() {
+            if (index < sentences.length) {
+                document.getElementById("sentence").innerHTML = sentences[index];
+                index++;
+            } else {
+                document.getElementById("sentence").innerHTML = "Selleks aastaks on kõik! :(";
+            }
+        }
+    </script>
+</body>
+</html>
